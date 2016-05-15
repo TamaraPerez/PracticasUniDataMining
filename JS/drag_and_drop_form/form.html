@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Formulario DnD</title>
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+</head>
+<body>
+
+<form id="uploadform" action="" method="POST" enctype="multipart/form-data">
+	<fieldset>
+	<legend>Datos cliente</legend>
+	<table id="tabla">
+		<tr>
+			<td><label for="nombre">Nombre: </label></td>
+			<td><input id="nombre" name="nombreInput" placeholder="Introduce tu nombre" autofocus required></td>
+		</tr>
+		<tr>
+			<td><label for="telefono">Teléfono: </label></td>
+			<td><input id="telefono" name="telefonoInput" type="tel" placeholder="Patrón: 123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required></td>
+		</tr>
+		<tr>	
+			<td><label for="email">Email: </label></td>
+			<td><input id="email" name="emailInput" type="email" placeholder="Introduce tu dirección de correo electrónico" required></td>
+		</tr>
+	</table>
+	</fieldset>
+	<fieldset>
+	<legend>Libros</legend>
+	<div>
+	   <input type="text" id="datalist" list="listaLibros" name="librosInput" required>
+		<datalist id="listaLibros">
+			<option value="La sombra del viento">
+			<option value="El prisionero del cielo">
+			<option value="El juego del angel">
+			<option value="El principe de la niebla">
+			<option value="El palacio de la medianoche">
+		</datalist>
+	   <label for="nombre">Cantidad (Máx. 5): </label>
+	   <input id="cantidad" type="number" name="cantLibrosInput" min="1" max="5" step="1" required>
+	</div>
+	</fieldset>
+	<div>
+	   <input type="file" id="fileselect" name="fileInput" multiple />
+	   <div id="dropbox">arrastra aquí tus ficheros</div>
+	</div>
+	<div>
+		<ul id="listadoFicheros">Listado de Ficheros insertados:
+			<li id="vacio">Vacío</li>
+		</ul>
+	</div>
+	<input type="submit" id="submitButton" value="Enviar">
+</form>
+<script src="form.js"></script>
+</body>
+</html>
